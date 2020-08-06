@@ -8,7 +8,13 @@ import movies from './reducers';
 
 
 const store = createStore(movies);
-console.log("store", store);
-console.log("STORE", store.getState());
+// console.log("store", store);
+// console.log("Before STORE", store.getState());
 
-ReactDOM.render(<App />, document.getElementById('root'));
+// store.dispatch({
+//     type : "ADD_MOVIES",
+//     movies : [{name:"super man"}]
+// });
+// console.log("After STORE", store.getState());
+
+ReactDOM.render(<App store={store}/>, document.getElementById('root'));
