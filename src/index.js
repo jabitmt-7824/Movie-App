@@ -4,10 +4,14 @@ import { createStore } from 'redux';
 
 import './index.css';
 import App from './components/App';
-import movies from './reducers';
+import combineReducer from './reducers';
 
+const logger = ({dispatch, getState}) => (next) => (action) => {
+    console.log(action.type);
+    return next();
+}
 
-const store = createStore(movies);
+const store = createStore(combineReducer);
 // console.log("store", store);
 // console.log("Before STORE", store.getState());
 
