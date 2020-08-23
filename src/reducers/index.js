@@ -26,7 +26,7 @@ export function movies(state = initialMovieState, action) {
         case SHOW_FAVOURITE:
             return ({ ...state, showFavourite: action.val });
         case ADD_MOVIES_TO_LIST:
-            return ({...state, list:[action.movie, ...state.list]});
+            return ({ ...state, list: [action.movie, ...state.list] });
         default:
             return state;
     }
@@ -40,26 +40,26 @@ const initialSearchState = {
 export function search(state = initialSearchState, action) {
     switch (action.type) {
         case ADD_SEARCH_RESULT:
-            return ({ ...state, result: action.movie , showSearchResults: true});
+            return ({ ...state, result: action.movie, showSearchResults: true });
         case ADD_MOVIES_TO_LIST:
-            return ({...state, showSearchResults: false });
+            return ({ ...state, showSearchResults: false });
         default:
             return state;
     }
 }
-    // const initialRootState = {
-    //     movies: initialMovieState,
-    //     search: initialSearchState
-    // };
+// const initialRootState = {
+//     movies: initialMovieState,
+//     search: initialSearchState
+// };
 
-    // export default function rootReducer(state = initialRootState, action){
-    //     return {
-    //         movies: movies(state.movies, action),
-    //         search: search(state.search, action)
-    //     }
-    // }
+// export default function rootReducer(state = initialRootState, action){
+//     return {
+//         movies: movies(state.movies, action),
+//         search: search(state.search, action)
+//     }
+// }
 
-    export default combineReducers({
-        movies,
-        search
-    });
+export default combineReducers({
+    movies,
+    search
+});
